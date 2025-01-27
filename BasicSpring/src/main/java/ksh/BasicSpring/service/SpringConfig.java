@@ -1,6 +1,7 @@
 package ksh.BasicSpring.service;
 
 import ksh.BasicSpring.repository.JdbcMemberRepository;
+import ksh.BasicSpring.repository.JdbcTemplateMemberRepository;
 import ksh.BasicSpring.repository.MemberRepository;
 import ksh.BasicSpring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
         // return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+        // return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
